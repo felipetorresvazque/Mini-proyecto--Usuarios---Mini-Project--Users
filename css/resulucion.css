@@ -1,0 +1,15 @@
+.w3-container {
+  display: grid;
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: 100%;
+  padding: 40px;
+}
+.botones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 32px;
+}
+footer {
+  padding: 5px;
+}

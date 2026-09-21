@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/resulucion.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
+
+    <title>Usuarios</title>
+  </head>
+  <body>
+    <div class="w3-container w3-teal">
+      <h1>Usuarios</h1>
+    </div>
+    <div class="w3-container">
+      <label class="w3-text-teal" for="id_input">id</label>
+      <input id="id_input" class="w3-input w3-border" type="text" />
+      <br />
+      <label class="w3-text-teal" for="nombre_input">nombre</label>
+      <input id="nombre_input" class="w3-input w3-border" type="text" />
+      <br />
+      <label class="w3-text-teal" for="email_input">email</label>
+      <input id="email_input" class="w3-input w3-border" type="email" />
+
+      <br />
+      <br />
+      <h3>Tabla</h3>
+      <div class="w3-responsive">
+        <table class="w3-table-all w3-hoverable">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>nombre</th>
+              <th>email</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-usuarios"></tbody>
+        </table>
+      </div>
+      <hr />
+      <div class="botones">
+        <button id="btn_agregar" class="w3-button w3-teal">Agregar</button>
+        <button id="btn_modificar" class="w3-button w3-teal">Modificar</button>
+        <button id="btn_eliminar" class="w3-button w3-teal">Eliminar</button>
+        <button id="btn_limpiar" class="w3-button w3-teal">Limpiar</button>
+        <button id="btn_mostrar-usuarios" class="w3-button w3-teal">
+          Mostrar usuarios
+        </button>
+      </div>
+    </div>
+    <br />
+    <br />
+    <footer>felipesonic 2026</footer>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+  <script src="./js/sql.js"></script>
+</html>
