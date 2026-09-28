@@ -84,6 +84,11 @@ function agregar() {
     return;
   }
 
+  if (!email_valido(datos.email)) {
+    alert("El email no es válido");
+    return;
+  }
+
   try {
     db.run("INSERT INTO usuarios (id, nombre, email) VALUES (?, ?, ?)", [
       Number(datos.id),
@@ -106,6 +111,11 @@ function modificar() {
   const datos = leerFormulario();
   if (!datos.id || !datos.nombre || !datos.email) {
     alert("Completa id, nombre y email");
+    return;
+  }
+
+  if (!email_valido(datos.email)) {
+    alert("El email no es válido");
     return;
   }
 
@@ -162,14 +172,36 @@ function limpiar() {
   document.getElementById("nombre_input").value = "";
   document.getElementById("email_input").value = "";
 }
-
+//------------Seguridad-------------
 function solonumero(input) {
   input.value = input.value.replace(/[^0-9]/g, "");
 }
 
+function bloquear_comillas(input) {
+  input.value = input.value.replace(/['"]/g, "");
+}
+
+function email_valido(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+
+//_----------------------------------------------
 // ---------- Eventos ----------
 document.getElementById("id_input").addEventListener("input", function () {
   solonumero(this);
+});
+
+document.getElementById("id_input").addEventListener("input", function () {
+  bloquear_comillas(this);
+});
+
+document.getElementById("nombre_input").addEventListener("input", function () {
+  bloquear_comillas(this);
+});
+
+document.getElementById("email_input").addEventListener("input", function () {
+  bloquear_comillas(this);
 });
 
 document.getElementById("btn_agregar").addEventListener("click", agregar);
